@@ -105,7 +105,7 @@ public class screen3 extends AppCompatActivity {
             public void run() {
                 long unixTime = System.currentTimeMillis() / 1000L;
                 String uni = Long.toString(unixTime);
-                String url = "https://api.lunarcrush.com/v2?data=assets&key=ibd18qa5h5dvo8m7571wj&symbol=ETH&interval=minute&start="+uni;
+                String url = "https://api.lunarcrush.com/v2?data=assets&key=ibd18qa5h5dvo8m7571wj&symbol=BTC&interval=minute&start="+uni;
                 JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, url,
                         null,
                         new Response.Listener<JSONObject>() {

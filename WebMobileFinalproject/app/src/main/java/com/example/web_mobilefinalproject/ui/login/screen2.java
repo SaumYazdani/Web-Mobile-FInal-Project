@@ -68,7 +68,7 @@ public class screen2 extends AppCompatActivity {
             public void run() {//update btc price function every 1 second -> price is not live data (api rate limits) approx every 1 minute change in price
                 long unixTime = System.currentTimeMillis() / 1000L;
                 String uni = Long.toString(unixTime);
-                String url = "https://api.lunarcrush.com/v2?data=assets&key=ibd18qa5h5dvo8m7571wj&symbol=ETH&interval=hour&start="+uni;
+                String url = "https://api.lunarcrush.com/v2?data=assets&key=ibd18qa5h5dvo8m7571wj&symbol=BTC&interval=hour&start="+uni;
                 String finalInitial1 = initial[0];
                 JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, url,
                         null,
