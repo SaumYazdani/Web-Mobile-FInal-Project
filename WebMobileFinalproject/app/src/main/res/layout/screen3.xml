@@ -17,7 +17,7 @@
         android:layout_marginBottom="11dp"
         android:text="Available BTC Balance"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/charty"
         app:layout_constraintEnd_toStartOf="@+id/balance2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -34,7 +34,7 @@
         android:layout_marginBottom="11dp"
         android:text="0"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/charty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/balance" />
@@ -51,7 +51,7 @@
         android:layout_marginBottom="88dp"
         android:text="Available USD Balance"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/charty"
         app:layout_constraintEnd_toStartOf="@+id/balance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/sell"
         app:layout_constraintEnd_toStartOf="@+id/buyamt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/charty" />
 
     <Button
         android:id="@+id/sell"
@@ -110,10 +110,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buy" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="290dp"
-        android:layout_height="225dp"
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/charty"
+        android:layout_width="373dp"
+        android:layout_height="254dp"
         android:layout_marginStart="90dp"
         android:layout_marginLeft="90dp"
         android:layout_marginTop="100dp"
@@ -122,7 +122,7 @@
         android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toTopOf="@+id/buy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="@+id/buy"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
         app:srcCompat="@android:drawable/ic_menu_mapmode" />
@@ -140,7 +140,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="Bitcoin"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/charty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -158,7 +158,7 @@
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:hint="BTC Amount"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/returnoverview"
         app:layout_constraintEnd_toEndOf="parent"
@@ -178,12 +178,12 @@
         android:ems="10"
         android:fontFamily="sans-serif-smallcaps"
         android:hint="USD Amount"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/sellamt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buy"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/charty" />
 
     <Button
         android:id="@+id/returnoverview"
@@ -220,7 +220,8 @@
         app:layout_constraintBottom_toTopOf="@+id/textView15"
         app:layout_constraintEnd_toStartOf="@+id/btcprice2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/balance"
@@ -234,7 +235,7 @@
         android:layout_marginBottom="88dp"
         android:text="BAL"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/charty"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/btcprice2" />

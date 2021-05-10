@@ -21,33 +21,33 @@ public class screen1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen1);
-        Button nextscreen = findViewById(R.id.overview);
-        nextscreen.setOnClickListener(new View.OnClickListener(){
+        Button nextscreen = findViewById(R.id.overview); // setting next screen button
+        nextscreen.setOnClickListener(new View.OnClickListener(){ //seting onclick listener for next screen
             public void onClick(View v) {
-                startingamt = findViewById(R.id.startingbal);
-                if(!TextUtils.isEmpty(startingamt.getText().toString())) {
+                startingamt = findViewById(R.id.startingbal); // setting startingamt variable to text view
+                if(!TextUtils.isEmpty(startingamt.getText().toString())) { // if starting amt is not empty, parse the result and turn it into double
                     amt = startingamt.getText().toString();
                     double amtt = Double.parseDouble(amt);
-                    if (amtt < 0) {
+                    if (amtt < 0) { //if amtt (startingamt bal in double form) is greater than zero show error message
                         Context context = getApplicationContext();
                         CharSequence text = "Starting USD Amount must be at least 1";
                         int duration = Toast.LENGTH_LONG;
                         Toast failedval = Toast.makeText(context, text, duration);
                         failedval.show();
-                    } else if (amtt == 0) {
+                    } else if (amtt == 0) { //if amtt (startingamt bal in double form) is equal to zero show error message
                         Context context = getApplicationContext();
                         CharSequence text = "Starting USD amount must be greater than 0!";
                         int duration = Toast.LENGTH_LONG;
                         Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
                     }
-                    else {
+                    else { // Otherwise, start next activity and send starting bal value to next screen
                         sendstarting();
                         overview();
                     }
 
                 }
-                else{
+                else{ // if user is fails to enter a value but hits next screen, show error message
                     Context context = getApplicationContext();
                     CharSequence text = "Please enter the amount in USD you would like to start investing with!";
                     int duration = Toast.LENGTH_LONG;
@@ -58,11 +58,11 @@ public class screen1 extends AppCompatActivity {
         });
 
     }
-    public void overview(){
+    public void overview(){ // method will go to next screen
         Intent intent = new Intent (screen1.this,screen2.class);
         startActivity(intent);
     }
-    public void sendstarting(){
+    public void sendstarting(){ // method will send starting amt to next screen
         String starting = amt;
         Intent intent = new Intent (screen1.this,screen2.class);
         Bundle bundle = new Bundle();
